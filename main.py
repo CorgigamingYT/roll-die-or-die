@@ -17,15 +17,13 @@ def p3(text, score, score2):
     print(int(score2))
 
 
-def playround():
-    rounds = 1
-    if rounds == '1':
-        rounds = rounds + 1
+def playround(round):
+
     dice1roll1 = random.randint(1, 6)
     dice2roll1 = random.randint(1, 6)
     even = [2, 4, 6, 8, 10, 12]
     odd = [1, 3, 5, 7, 9, 11]
-    print("ROUND ", rounds)
+    print("ROUND ", round)
     time.sleep(1)
     p3("Your first numbers are", dice1roll1, dice2roll1)
     points = dice1roll1 + dice2roll1
@@ -41,12 +39,12 @@ def playround():
         points = + 1
         p1("Have a point. On us.")
     time.sleep(1)
-    print("Your score after round ", rounds,  "is:", points)
+    print("Your score after round ", round,  "is:", points)
     nr = input("To play next round, press y ").lower()
     if nr == 'y':
-        rounds = rounds + 1
-        playround()
-    playround()
+
+        playround(round+1)
+    playround(round+1)
 
 
 user = input("Please enter a username: ")
@@ -64,4 +62,4 @@ if user == "yeet":
 """)
         yn = input("Please choose: ")
         if yn == "1":
-            playround()
+            playround(1)
