@@ -1,20 +1,28 @@
 import random
 import time
-def p1 (text):
+
+
+def p1(text):
     print(text)
-def p2 (text, score):
+
+
+def p2(text, score):
     print(text)
     print(int(score))
-def p3 (text, score, score2):
+
+
+def p3(text, score, score2):
     print(text)
     print(int(score))
     print(int(score2))
+
+
 def playround():
     rounds = 1
     if rounds == '1':
         rounds = rounds + 1
-    dice1roll1 = random.randint(1,6)
-    dice2roll1 = random.randint(1,6)
+    dice1roll1 = random.randint(1, 6)
+    dice2roll1 = random.randint(1, 6)
     even = [2, 4, 6, 8, 10, 12]
     odd = [1, 3, 5, 7, 9, 11]
     print("ROUND ", rounds)
@@ -25,12 +33,12 @@ def playround():
     score1 = sum = float(dice1roll1) + float(dice2roll1)
     if score1 in even:
         p1("+10 points")
-        points = points +10
+        points = points + 10
     else:
         p1("-5 points")
-        points = points -5
+        points = points - 5
     if points <= 0:
-        points =+ 1
+        points = + 1
         p1("Have a point. On us.")
     time.sleep(1)
     print("Your score after round ", rounds,  "is:", points)
@@ -39,6 +47,8 @@ def playround():
         rounds = rounds + 1
         playround()
     playround()
+
+
 user = input("Please enter a username: ")
 if user == "yeet":
     password = input("Please enter a password: ")
